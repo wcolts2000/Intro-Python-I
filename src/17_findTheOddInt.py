@@ -45,7 +45,7 @@ There will always be only one integer that appears an odd number of times.
 def findOdd(arr):
     hashTable = {}
     for num in arr:
-        if (num in hashTable.keys()):
+        if (num in hashTable):
             hashTable[num] += 1
         else:
             hashTable[num] = 1

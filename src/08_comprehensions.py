@@ -37,13 +37,10 @@ print(y)
 x = [int(i) for i in input("Enter comma-separated numbers: ").split(',')]
 # x = input("Enter comma-separated numbers: ").split(',')
 
-# y = [int(num) for num in x if (int(num) % 2 == 0)]
-y = [num for num in x if (num % 2 == 0)]
-
-# print(x)
-# print(y)
 
 # What do you need between the square brackets to make it work?
 # y = []
+# y = [int(num) for num in x if (int(num) % 2 == 0)]
+y = [num for num in x if (num % 2 == 0)]
 
 print(y)
