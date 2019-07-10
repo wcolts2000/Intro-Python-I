@@ -83,7 +83,7 @@ losses = 0
 ties = 0
 move_choices = ["r", "p", "s"]
 
-o = RockOpponent()
+# o = RockOpponent()
 
 # Build a REPL command loop
 while True:
