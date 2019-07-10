@@ -1,3 +1,6 @@
+import sys
+import calendar
+from datetime import datetime
 """
 The Python standard library's 'calendar' module allows you to
 render a calendar to your terminal.
@@ -5,6 +8,7 @@ https://docs.python.org/3.6/library/calendar.html
 
 Write a program that accepts user input of the form
   `14_cal.py month [year]`
+
 and does the following:
  - If the user doesn't specify any input, your program should
    print the calendar for the current month. The 'datetime'
@@ -18,7 +22,43 @@ and does the following:
    the format that your program expects arguments to be given.
    Then exit the program.
 """
+# tCal = calendar.TextCalendar(firstweekday=0)
+# tCal.prmonth(2019, 1)
 
-import sys
-import calendar
-from datetime import datetime
+# TERMINAL PROMPTS
+
+# userInput = input("Enter year and/or month").split(',')
+
+
+# def print_cal(arg1, arg2):
+#     print(calendar.month(arg1, arg2))
+
+
+# if (userInput[0] == ''):
+#     print_cal(datetime.now().year, datetime.now().month)
+# elif len(userInput) == 1:
+#     print(calendar.month(datetime.now().year, int(userInput[0])))
+# elif len(userInput) == 2:
+#     print_cal(int(userInput[1]), int(userInput[0]))
+# else:
+#     print('Hint: provide a integer for the month and/or a year only')
+
+
+# FILE INITIALIZED INPUT ARGS
+
+# removes the filename from the sys.argv list
+userInput = sys.argv[1:]
+
+
+def print_cal(arg1, arg2):
+    print(calendar.month(arg1, arg2))
+
+
+if (len(userInput) == 0):
+    print_cal(datetime.now().year, datetime.now().month)
+elif len(userInput) == 1:
+    print(calendar.month(datetime.now().year, int(userInput[0])))
+elif len(userInput) == 2:
+    print_cal(int(userInput[1]), int(userInput[0]))
+else:
+    print('Hint: provide a integer for the month and/or a year only')
