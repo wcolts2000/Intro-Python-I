@@ -45,10 +45,13 @@ There will always be only one integer that appears an odd number of times.
 def findOdd(arr):
     hashTable = {}
     for num in arr:
-        if (num in hashTable):
-            hashTable[num] += 1
-        else:
-            hashTable[num] = 1
+        # if (num in hashTable):
+        #     hashTable[num] += 1
+        # else:
+        #     hashTable[num] = 1
+        hashTable[num] = hashTable.get(num, 0) + 1
+
+    print(hashTable)
 
     for key, num in hashTable.items():
         if (int(num) % 2 == 1):
